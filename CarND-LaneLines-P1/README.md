@@ -40,5 +40,5 @@ The following are potential shortcomings of this approach:
 
 Possible improvements are:
 1. Train the solution over multiple videos to figure out more optimized masks for white and yellow lines.
-2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones.
+2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones. Update: I actually did this and the output of the challenge video can be seen in the folder with test videos output.
 
