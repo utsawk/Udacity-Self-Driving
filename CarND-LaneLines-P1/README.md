@@ -38,8 +38,8 @@ The following are potential shortcomings of this approach:
 2. The code actually worked fine without the mask above, as long as the region of interest was correct. The region of interest can change depending on the view from the dashboard of the car, for e.g., uphill/downhill roads. The mask was used to improve performance for the challenge video. Automating the region of interest calculation based on the output of the camera is very important for a real solution.
 3. Lines in each image sample from the video are independent, however, real lane lines across images are not independent (for P1.ipynb) . 
 Update for challenge output (in challenge.ipynb) to smoothen the lines: 
-1. Filter current line output based on if it is within some tolerance of historic average
-2. Moving average of last "n" calculated lines
+- Filter current line output based on if it is within some tolerance of historic average
+- Moving average of last "n" calculated lines
 
 
 ### 3. Possible improvements
