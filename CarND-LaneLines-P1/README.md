@@ -7,11 +7,14 @@
 
 ---
 
-### Reflection
+### List of code files
+1. P1.ipynb - main file with all the code and explanations
+2. challenge.ipynb - modifications to P1.ipynb specifically for the challenge video
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consists of the following steps:
+### 1. Steps taken for drawing lane lines.
+
+The pipeline consists of the following steps:
 1. Converting image to HSV format: This allows easy application of color masks in step 2.
 2. Isolate the yellow and white lines in the image: The resulting figure is shown below in hsv color format.
 ![alt text][image1]
@@ -27,18 +30,21 @@ My pipeline consists of the following steps:
 
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings
 
 
 The following are potential shortcomings of this approach:
 1. The yellow and white mask applied might not be able to identify all possible shades of yellow and white under different light conditions. This includes performance of algorithm at night, under tree shadows, etc. The solution here fails to adapt to shadows for example.
 2. The code actually worked fine without the mask above, as long as the region of interest was correct. The region of interest can change depending on the view from the dashboard of the car, for e.g., uphill/downhill roads. The mask was used to improve performance for the challenge video. Automating the region of interest calculation based on the output of the camera is very important for a real solution.
-3. Lines in each image sample from the video are independent, however, real lane lines across images are not independent. Recognizing how the lane lines are and drawing the correct polynomial to represent lane lines is crucial.
+3. Lines in each image sample from the video are independent, however, real lane lines across images are not independent (for P1.ipynb) . 
+Update for challenge output (in challenge.ipynb) to smoothen the lines: 
+1. Filter current line output based on if it is within some tolerance of historic average
+2. Moving average of last "n" calculated lines
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible improvements
 
 Possible improvements are:
 1. Train the solution over multiple videos to figure out more optimized masks for white and yellow lines.
-2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones. Update: I actually did this and the output of the challenge video can be seen in the folder with test videos output.
+2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones. Update: I actually did this and the output of the challenge video can be seen in the folder with test videos output (Update: this is done with the challenge.ipynb)
 
