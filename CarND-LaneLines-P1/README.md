@@ -7,9 +7,14 @@
 
 ---
 
-### List of code files
+### List of files & folders
 1. P1.ipynb - main file with all the code and explanations
 2. challenge.ipynb - modifications to P1.ipynb specifically for the challenge video
+3. test_images folder - input images
+4. test_images_output folder - output images with lane lines superimposed
+5. test_videos - input videos
+6. test_videos_output - output videos with lane lines superimposed
+The rest of the files are used for this writeup
 
 
 ### 1. Steps taken for drawing lane lines.
@@ -47,5 +52,5 @@ Update for challenge output (in challenge.ipynb) to smoothen the lines:
 
 Possible improvements are:
 1. Train the solution over multiple videos to figure out more optimized masks for white and yellow lines.
-2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones. Update: I actually did this and the output of the challenge video can be seen in the folder with test videos output (Update: this is done with the challenge.ipynb)
+2. Implement a least squares solution for making lane lines across different images within a video more smooth. This could also help eliminate lane lines which are a significantly off from previous ones. Update: I actually did this and the output of the challenge video can be seen in the folder with test videos output (this is done in challenge.ipynb)
 
